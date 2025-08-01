@@ -8,6 +8,8 @@ console.log({
     name, hpPoints, isAlive
 })
 
+
+
 export {};
 
 
