@@ -23,8 +23,8 @@ interface TaxCalculationOptions {
 function taxCalculation(options: TaxCalculationOptions): number[] {
 
     let total = 0;
-    options.products.forEach(product => {
-        total += product.price
+    options.products.forEach( ({price}) => {
+        total += price;
     })
 
     return [total, total * options.tax];
@@ -35,12 +35,12 @@ const shoppingCart = [phone, tablet];
 const tax = 0.15;
 
 
-const [] = taxCalculation ({
+const [total, taxTotal] = taxCalculation ({
     products: shoppingCart,
-    tax  
-});    
+    tax
+});
 
 
-console.log('Precio total: ', result[0]);
-console.log('Tax total: ', result[1]);
+console.log('Precio total: ', total);
+console.log('Tax total: ', taxTotal);
 export { };
